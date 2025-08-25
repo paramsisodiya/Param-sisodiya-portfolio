@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Param Sisodiya - Creative Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Enhanced Animations */
+        .slide-up {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .slide-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-80px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .slide-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-right {
+            opacity: 0;
+            transform: translateX(80px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .slide-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.7) rotate(5deg);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+        
+        /* Advanced Gradients */
+        .gradient-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        }
+        
+        .gradient-secondary {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .gradient-accent {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        
+        .gradient-sunset {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+        }
+        
+        .gradient-ocean {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-fire {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Glass Morphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Floating Elements */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .float-delayed {
+            animation: float 6s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+        .float-slow {
+            animation: float 8s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(2deg); }
+            50% { transform: translateY(-10px) rotate(0deg); }
+            75% { transform: translateY(-15px) rotate(-2deg); }
+        }
+        
+        /* Enhanced Hover Effects */
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hover-glow {
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .hover-glow::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+            filter: blur(20px);
+        }
+        .hover-glow:hover::before {
+            opacity: 0.7;
+        }
+        .hover-glow:hover {
+            transform: translateY(-10px);
+        }
+        
+        /* Skill Bars with Glow */
+        .skill-progress {
+            width: 0%;
+            transition: width 3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shimmer 3s infinite;
+        }
+        .skill-progress.animate {
+            width: var(--width);
+        }
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        /* Portfolio Cards */
+        .portfolio-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.8s;
+            z-index: 2;
+        }
+        .portfolio-card:hover::before {
+            left: 100%;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.95), rgba(250, 112, 154, 0.95));
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+        }
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-20px) scale(1.03) rotateX(5deg);
+            box-shadow: 0 50px 100px rgba(0,0,0,0.25);
+        }
+        
+        /* Navigation */
+        .nav-item {
+            position: relative;
+            padding: 0.75rem 1.5rem;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+        }
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        .nav-item:hover::before {
+            width: 100%;
+        }
+        .nav-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Testimonial Cards */
+        .testimonial-card {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+        }
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+            filter: blur(10px);
+        }
+        .testimonial-card:hover::before {
+            opacity: 0.7;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-15px) scale(1.02);
+        }
+        
+        /* Particle System */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: float-particle 12s infinite linear;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        @keyframes float-particle {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+        
+        /* Tool Cards */
+        .tool-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+        .tool-card:hover {
+            transform: translateY(-10px) rotateY(10deg);
+            box-shadow: 0 30px 60px rgba(102, 126, 234, 0.2);
+        }
+        
+        /* Enhanced Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(135deg, #f1f1f1, #e8e8e8);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 6px;
+            border: 2px solid #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #764ba2, #f093fb);
+        }
+        
+        /* Text Glow Effect */
+        .text-glow {
+            text-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+        }
+        
+        /* Magnetic Effect */
+        .magnetic {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* Loading Animation */
+        .loading-dots {
+            display: inline-block;
+        }
+        .loading-dots::after {
+            content: '';
+            animation: dots 2s infinite;
+        }
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 via-white to-purple-50 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full glass z-50 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-3xl font-bold gradient-primary bg-clip-text text-transparent serif-font">
+                    Param Sisodiya
+                </div>
+                <div class="hidden md:flex space-x-1">
+                    <a href="#home" class="nav-item text-gray-700 hover:text-purple-600 font-medium">Home</a>
+                    <a href="#about" class="nav-item text-gray-700 hover:text-purple-600 font-medium">About</a>
+                    <a href="#skills" class="nav-item text-gray-700 hover:text-purple-600 font-medium">Skills</a>
+                    <a href="#portfolio" class="nav-item text-gray-700 hover:text-purple-600 font-medium">Portfolio</a>
+                    <a href="#tools" class="nav-item text-gray-700 hover:text-purple-600 font-medium">Tools</a>
+                    <a href="#testimonials" class="nav-item text-gray-700 hover:text-purple-600 font-medium">Reviews</a>
+                    <a href="#contact" class="nav-item text-gray-700 hover:text-purple-600 font-medium">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-700 hover:text-purple-600 transition-colors">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen gradient-hero text-white relative overflow-hidden">
+        <div class="particles">
+            <div class="particle" style="left: 5%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 15%; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 25%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 35%; animation-delay: 3s;"></div>
+            <div class="particle" style="left: 45%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 55%; animation-delay: 5s;"></div>
+            <div class="particle" style="left: 65%; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 75%; animation-delay: 7s;"></div>
+            <div class="particle" style="left: 85%; animation-delay: 8s;"></div>
+            <div class="particle" style="left: 95%; animation-delay: 9s;"></div>
+        </div>
+        
+        <!-- Floating Decorative Elements -->
+        <div class="absolute top-20 left-10 w-32 h-32 gradient-sunset rounded-full opacity-20 float"></div>
+        <div class="absolute top-40 right-20 w-24 h-24 gradient-ocean rounded-full opacity-30 float-delayed"></div>
+        <div class="absolute bottom-40 left-20 w-20 h-20 gradient-fire rounded-full opacity-25 float-slow"></div>
+        <div class="absolute bottom-20 right-10 w-28 h-28 gradient-accent rounded-full opacity-20 float"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 pt-40 pb-32 relative z-10">
+            <div class="text-center">
+                <div class="slide-up mb-12">
+                    <div class="inline-block p-6 glass rounded-full mb-8 float hover-glow">
+                        <div class="text-8xl">🎨</div>
+                    </div>
+                    <h1 class="text-7xl md:text-9xl font-black mb-8 serif-font text-glow leading-tight">
+                        Creative
+                        <span class="block bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-300 bg-clip-text text-transparent">
+                            Designer
+                        </span>
+                    </h1>
+                    <p class="text-2xl md:text-3xl mb-12 opacity-95 max-w-4xl mx-auto leading-relaxed font-light">
+                        Transforming bold ideas into <span class="font-semibold text-yellow-300">stunning visual experiences</span> 
+                        that captivate, inspire, and drive extraordinary results
+                    </p>
+                </div>
+                <div class="slide-up flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+                    <a href="#portfolio" class="btn-primary px-10 py-5 text-white rounded-full font-bold text-lg shadow-2xl hover:scale-105 transition-all duration-300">
+                        Explore My Masterpieces
+                    </a>
+                    <a href="#contact" class="px-10 py-5 glass rounded-full font-bold text-lg hover:bg-white/30 transition-all duration-300 border-2 border-white/40">
+                        Let's Create Magic
+                    </a>
+                </div>
+                <div class="slide-up grid grid-cols-3 gap-12 max-w-2xl mx-auto">
+                    <div class="text-center glass p-6 rounded-2xl hover-lift">
+                        <div class="text-4xl font-black text-yellow-300 mb-2">50+</div>
+                        <div class="text-lg opacity-90 font-medium">Epic Projects</div>
+                    </div>
+                    <div class="text-center glass p-6 rounded-2xl hover-lift">
+                        <div class="text-4xl font-black text-pink-300 mb-2">5+</div>
+                        <div class="text-lg opacity-90 font-medium">Years Creating</div>
+                    </div>
+                    <div class="text-center glass p-6 rounded-2xl hover-lift">
+                        <div class="text-4xl font-black text-purple-300 mb-2">30+</div>
+                        <div class="text-lg opacity-90 font-medium">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 bg-gradient-to-br from-white via-purple-50 to-pink-50 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-100/20 to-pink-100/20"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="slide-up text-center mb-24">
+                <h2 class="text-6xl font-black serif-font text-gray-800 mb-8">About Me</h2>
+                <div class="w-32 h-2 gradient-primary mx-auto rounded-full mb-8"></div>
+                <p class="text-2xl text-gray-600 max-w-3xl mx-auto font-light">
+                    Passionate about creating designs that tell compelling stories and solve complex problems
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="slide-left">
+                    <div class="relative">
+                        <div class="w-full max-w-lg mx-auto aspect-square gradient-hero rounded-[3rem] flex items-center justify-center text-white text-9xl shadow-2xl hover-lift">
+                            👨‍🎨
+                        </div>
+                        <div class="absolute -top-8 -right-8 w-32 h-32 gradient-sunset rounded-full flex items-center justify-center text-white text-4xl shadow-2xl float hover-glow">
+                            ✨
+                        </div>
+                        <div class="absolute -bottom-8 -left-8 w-28 h-28 gradient-fire rounded-full flex items-center justify-center text-white text-3xl shadow-2xl float-delayed hover-glow">
+                            🚀
+                        </div>
+                        <div class="absolute top-1/2 -right-4 w-20 h-20 gradient-ocean rounded-full flex items-center justify-center text-white text-2xl shadow-xl float-slow">
+                            💡
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-right space-y-8">
+                    <h3 class="text-4xl font-bold text-gray-800 serif-font">Hello, I'm Param Sisodiya</h3>
+                    <p class="text-xl text-gray-600 leading-relaxed font-light">
+                        A passionate graphic designer with over <span class="font-semibold text-purple-600">5 years of experience</span> 
+                        in creating compelling visual narratives. I believe that great design is not just about making things look 
+                        beautiful—it's about <span class="font-semibold text-pink-600">solving problems, telling stories</span>, and 
+                        creating meaningful connections between brands and their audiences.
+                    </p>
+                    <p class="text-xl text-gray-600 leading-relaxed font-light">
+                        My journey in design began with a simple fascination for how colors, shapes, and typography could 
+                        evoke emotions and drive action. Today, I specialize in <span class="font-semibold text-purple-600">
+                        brand identity, digital design</span>, and creative solutions that help businesses stand out in an 
+                        increasingly crowded marketplace.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 pt-8">
+                        <div class="text-center p-6 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl hover-lift">
+                            <div class="text-3xl font-black text-purple-600 mb-2">50+</div>
+                            <div class="text-gray-700 font-medium">Completed Projects</div>
+                        </div>
+                        <div class="text-center p-6 bg-gradient-to-br from-pink-100 to-pink-200 rounded-2xl hover-lift">
+                            <div class="text-3xl font-black text-pink-600 mb-2">30+</div>
+                            <div class="text-gray-700 font-medium">Happy Clients</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4 pt-6">
+                        <span class="px-6 py-3 gradient-primary text-white rounded-full font-semibold shadow-lg hover-lift">Brand Identity</span>
+                        <span class="px-6 py-3 gradient-secondary text-white rounded-full font-semibold shadow-lg hover-lift">Digital Design</span>
+                        <span class="px-6 py-3 gradient-accent text-white rounded-full font-semibold shadow-lg hover-lift">Print Design</span>
+                        <span class="px-6 py-3 gradient-fire text-white rounded-full font-semibold shadow-lg hover-lift">UI/UX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-pink-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="particles">
+            <div class="particle" style="left: 10%; animation-delay: 0s; background: rgba(255,255,255,0.2);"></div>
+            <div class="particle" style="left: 30%; animation-delay: 2s; background: rgba(255,255,255,0.2);"></div>
+            <div class="particle" style="left: 50%; animation-delay: 4s; background: rgba(255,255,255,0.2);"></div>
+            <div class="particle" style="left: 70%; animation-delay: 6s; background: rgba(255,255,255,0.2);"></div>
+            <div class="particle" style="left: 90%; animation-delay: 8s; background: rgba(255,255,255,0.2);"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="slide-up text-center mb-24">
+                <h2 class="text-6xl font-black serif-font mb-8 text-glow">Skills & Expertise</h2>
+                <div class="w-32 h-2 bg-gradient-to-r from-yellow-400 to-pink-400 mx-auto rounded-full mb-8"></div>
+                <p class="text-2xl opacity-90 max-w-3xl mx-auto font-light">
+                    Mastering the art and science of visual communication
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="slide-left space-y-10">
+                    <div class="skill-item">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-bold text-white text-xl">Brand Design & Identity</span>
+                            <span class="text-yellow-400 font-black text-xl">95%</span>
+                        </div>
+                        <div class="w-full bg-white/20 rounded-full h-6 overflow-hidden backdrop-blur-sm">
+                            <div class="skill-progress gradient-primary h-6 rounded-full" style="--width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-bold text-white text-xl">Logo Design</span>
+                            <span class="text-pink-400 font-black text-xl">92%</span>
+                        </div>
+                        <div class="w-full bg-white/20 rounded-full h-6 overflow-hidden backdrop-blur-sm">
+                            <div class="skill-progress gradient-secondary h-6 rounded-full" style="--width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-bold text-white text-xl">Print & Layout Design</span>
+                            <span class="text-purple-400 font-black text-xl">88%</span>
+                        </div>
+                        <div class="w-full bg-white/20 rounded-full h-6 overflow-hidden backdrop-blur-sm">
+                            <div class="skill-progress gradient-accent h-6 rounded-full" style="--width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-right space-y-10">
+                    <div class="skill-item">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-bold text-white text-xl">Digital Marketing Design</span>
+                            <span class="text-blue-400 font-black text-xl">90%</span>
+                        </div>
+                        <div class="w-full bg-white/20 rounded-full h-6 overflow-hidden backdrop-blur-sm">
+                            <div class="skill-progress gradient-ocean h-6 rounded-full" style="--width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-bold text-white text-xl">Social Media Graphics</span>
+                            <span class="text-green-400 font-black text-xl">94%</span>
+                        </div>
+                        <div class="w-full bg-white/20 rounded-full h-6 overflow-hidden backdrop-blur-sm">
+                            <div class="skill-progress gradient-fire h-6 rounded-full" style="--width: 94%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-bold text-white text-xl">UI/UX Design</span>
+                            <span class="text-orange-400 font-black text-xl">85%</span>
+                        </div>
+                        <div class="w-full bg-white/20 rounded-full h-6 overflow-hidden backdrop-blur-sm">
+                            <div class="skill-progress gradient-sunset h-6 rounded-full" style="--width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-32 bg-gradient-to-br from-white via-blue-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="slide-up text-center mb-24">
+                <h2 class="text-6xl font-black serif-font text-gray-800 mb-8">Portfolio Showcase</h2>
+                <div class="w-32 h-2 gradient-primary mx-auto rounded-full mb-8"></div>
+                <p class="text-2xl text-gray-600 max-w-3xl mx-auto font-light">
+                    A curated collection of my finest creative masterpieces
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Portfolio Item 1 -->
+                <div class="scale-in">
+                    <div class="portfolio-card hover-glow">
+                        <div class="h-80 gradient-primary flex items-center justify-center text-white text-8xl relative overflow-hidden">
+                            🏢
+                            <div class="portfolio-overlay">
+                                <h3 class="text-white text-3xl font-bold mb-4">Corporate Branding</h3>
+                                <p class="text-white/95 text-center px-8 mb-6 text-lg">Complete brand identity system for tech startup including logo, colors, and comprehensive guidelines</p>
+                                <button class="px-8 py-3 bg-white text-purple-600 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-bold text-2xl text-gray-800 mb-3">TechFlow Brand Identity</h3>
+                            <p class="text-gray-600 mb-4 text-lg">Complete branding solution for innovative tech company</p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Branding</span>
+                                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Logo Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="scale-in">
+                    <div class="portfolio-card hover-glow">
+                        <div class="h-80 gradient-secondary flex items-center justify-center text-white text-8xl relative overflow-hidden">
+                            📱
+                            <div class="portfolio-overlay">
+                                <h3 class="text-white text-3xl font-bold mb-4">Social Campaign</h3>
+                                <p class="text-white/95 text-center px-8 mb-6 text-lg">Engaging social media designs that increased engagement by 300% and drove massive growth</p>
+                                <button class="px-8 py-3 bg-white text-blue-600 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-bold text-2xl text-gray-800 mb-3">Social Media Revolution</h3>
+                            <p class="text-gray-600 mb-4 text-lg">Dynamic social media campaign for lifestyle brand</p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Social Media</span>
+                                <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">Digital Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="scale-in">
+                    <div class="portfolio-card hover-glow">
+                        <div class="h-80 gradient-accent flex items-center justify-center text-white text-8xl relative overflow-hidden">
+                            🎯
+                            <div class="portfolio-overlay">
+                                <h3 class="text-white text-3xl font-bold mb-4">Restaurant Rebrand</h3>
+                                <p class="text-white/95 text-center px-8 mb-6 text-lg">Fresh visual identity that increased customer visits by 40% and transformed brand perception</p>
+                                <button class="px-8 py-3 bg-white text-pink-600 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-bold text-2xl text-gray-800 mb-3">Bistro Moderne Rebrand</h3>
+                            <p class="text-gray-600 mb-4 text-lg">Complete visual transformation for upscale restaurant</p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold">Rebranding</span>
+                                <span class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold">Hospitality</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="scale-in">
+                    <div class="portfolio-card hover-glow">
+                        <div class="h-80 gradient-fire flex items-center justify-center text-white text-8xl relative overflow-hidden">
+                            🎪
+                            <div class="portfolio-overlay">
+                                <h3 class="text-white text-3xl font-bold mb-4">Festival Poster</h3>
+                                <p class="text-white/95 text-center px-8 mb-6 text-lg">Eye-catching poster design that sold out the event and created massive buzz</p>
+                                <button class="px-8 py-3 bg-white text-red-600 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-bold text-2xl text-gray-800 mb-3">Summer Music Festival</h3>
+                            <p class="text-gray-600 mb-4 text-lg">Vibrant poster design for major music event</p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full text-sm font-semibold">Print Design</span>
+                                <span class="px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-semibold">Event Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 -->
+                <div class="scale-in">
+                    <div class="portfolio-card hover-glow">
+                        <div class="h-80 gradient-ocean flex items-center justify-center text-white text-8xl relative overflow-hidden">
+                            💻
+                            <div class="portfolio-overlay">
+                                <h3 class="text-white text-3xl font-bold mb-4">E-commerce Design</h3>
+                                <p class="text-white/95 text-center px-8 mb-6 text-lg">Modern website design that increased conversions by 60% and boosted sales</p>
+                                <button class="px-8 py-3 bg-white text-indigo-600 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-bold text-2xl text-gray-800 mb-3">Fashion E-commerce</h3>
+                            <p class="text-gray-600 mb-4 text-lg">Sleek online store design for fashion retailer</p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold">Web Design</span>
+                                <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 6 -->
+                <div class="scale-in">
+                    <div class="portfolio-card hover-glow">
+                        <div class="h-80 gradient-sunset flex items-center justify-center text-white text-8xl relative overflow-hidden">
+                            📦
+                            <div class="portfolio-overlay">
+                                <h3 class="text-white text-3xl font-bold mb-4">Package Design</h3>
+                                <p class="text-white/95 text-center px-8 mb-6 text-lg">Premium packaging that enhanced brand perception and increased shelf appeal</p>
+                                <button class="px-8 py-3 bg-white text-emerald-600 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">
+                                    View Project
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-bold text-2xl text-gray-800 mb-3">Organic Skincare Line</h3>
+                            <p class="text-gray-600 mb-4 text-lg">Eco-friendly packaging design for beauty products</p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">Package Design</span>
+                                <span class="px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-semibold">Sustainability</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="py-32 bg-gradient-to-br from-gray-100 via-purple-50 to-pink-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="slide-up text-center mb-24">
+                <h2 class="text-6xl font-black serif-font text-gray-800 mb-8">Creative Arsenal</h2>
+                <div class="w-32 h-2 gradient-primary mx-auto rounded-full mb-8"></div>
+                <p class="text-2xl text-gray-600 max-w-3xl mx-auto font-light">
+                    Professional tools that bring imagination to life
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <div class="slide-up text-center">
+                    <div class="tool-card w-32 h-32 mx-auto mb-6 gradient-primary rounded-3xl flex items-center justify-center text-white text-4xl shadow-2xl">
+                        🎨
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2 text-lg">Photoshop</h3>
+                    <p class="text-gray-600 font-medium">Photo Editing</p>
+                </div>
+                <div class="slide-up text-center">
+                    <div class="tool-card w-32 h-32 mx-auto mb-6 gradient-secondary rounded-3xl flex items-center justify-center text-white text-4xl shadow-2xl">
+                        ✏️
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2 text-lg">Illustrator</h3>
+                    <p class="text-gray-600 font-medium">Vector Graphics</p>
+                </div>
+                <div class="slide-up text-center">
+                    <div class="tool-card w-32 h-32 mx-auto mb-6 gradient-accent rounded-3xl flex items-center justify-center text-white text-4xl shadow-2xl">
+                        📄
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2 text-lg">InDesign</h3>
+                    <p class="text-gray-600 font-medium">Layout Design</p>
+                </div>
+                <div class="slide-up text-center">
+                    <div class="tool-card w-32 h-32 mx-auto mb-6 gradient-fire rounded-3xl flex items-center justify-center text-white text-4xl shadow-2xl">
+                        🖼️
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2 text-lg">Canva</h3>
+                    <p class="text-gray-600 font-medium">Quick Design</p>
+                </div>
+                <div class="slide-up text-center">
+                    <div class="tool-card w-32 h-32 mx-auto mb-6 gradient-ocean rounded-3xl flex items-center justify-center text-white text-4xl shadow-2xl">
+                        🎬
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2 text-lg">After Effects</h3>
+                    <p class="text-gray-600 font-medium">Motion Graphics</p>
+                </div>
+                <div class="slide-up text-center">
+                    <div class="tool-card w-32 h-32 mx-auto mb-6 gradient-sunset rounded-3xl flex items-center justify-center text-white text-4xl shadow-2xl">
+                        🖌️
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2 text-lg">Figma</h3>
+                    <p class="text-gray-600 font-medium">UI/UX Design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-32 bg-gradient-to-br from-white via-blue-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="slide-up text-center mb-24">
+                <h2 class="text-6xl font-black serif-font text-gray-800 mb-8">Client Love</h2>
+                <div class="w-32 h-2 gradient-primary mx-auto rounded-full mb-8"></div>
+                <p class="text-2xl text-gray-600 max-w-3xl mx-auto font-light">
+                    What amazing clients say about working with me
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="scale-in">
+                    <div class="testimonial-card bg-white p-10 rounded-3xl shadow-2xl">
+                        <div class="text-yellow-400 text-4xl mb-8">⭐⭐⭐⭐⭐</div>
+                        <p class="text-gray-600 mb-8 italic text-xl leading-relaxed font-light">
+                            "Param's creative vision transformed our brand completely. The new identity perfectly captures 
+                            our innovative spirit and has significantly improved our market presence."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-20 h-20 gradient-primary rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6 shadow-lg">
+                                S
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-xl">Sarah Johnson</h4>
+                                <p class="text-gray-600 text-lg">CEO, TechStart Inc.</p>
+                                <p class="text-purple-600 font-semibold">Brand Identity Project</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scale-in">
+                    <div class="testimonial-card bg-white p-10 rounded-3xl shadow-2xl">
+                        <div class="text-yellow-400 text-4xl mb-8">⭐⭐⭐⭐⭐</div>
+                        <p class="text-gray-600 mb-8 italic text-xl leading-relaxed font-light">
+                            "Working with Param was an absolute pleasure. His social media designs increased our 
+                            engagement by 300% and brought our brand to life in ways we never imagined."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-20 h-20 gradient-secondary rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6 shadow-lg">
+                                M
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-xl">Michael Chen</h4>
+                                <p class="text-gray-600 text-lg">Marketing Director, FoodieHub</p>
+                                <p class="text-blue-600 font-semibold">Social Media Campaign</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scale-in">
+                    <div class="testimonial-card bg-white p-10 rounded-3xl shadow-2xl">
+                        <div class="text-yellow-400 text-4xl mb-8">⭐⭐⭐⭐⭐</div>
+                        <p class="text-gray-600 mb-8 italic text-xl leading-relaxed font-light">
+                            "The poster designs Param created for our festival were absolutely stunning. They perfectly 
+                            captured the energy of our event and helped us achieve record attendance."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-20 h-20 gradient-accent rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6 shadow-lg">
+                                E
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-xl">Emily Rodriguez</h4>
+                                <p class="text-gray-600 text-lg">Event Manager, CityFest</p>
+                                <p class="text-pink-600 font-semibold">Event Marketing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 gradient-hero text-white relative overflow-hidden">
+        <div class="particles">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 25%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 55%; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 8s;"></div>
+            <div class="particle" style="left: 85%; animation-delay: 10s;"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="slide-up text-center mb-24">
+                <h2 class="text-6xl font-black serif-font mb-8 text-glow">Let's Create Magic Together</h2>
+                <div class="w-32 h-2 bg-white mx-auto rounded-full mb-8"></div>
+                <p class="text-2xl opacity-95 max-w-4xl mx-auto font-light">
+                    Ready to transform your vision into stunning reality? Let's discuss your next big project
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-20">
+                <div class="slide-left">
+                    <h3 class="text-4xl font-bold mb-12">Get In Touch</h3>
+                    <div class="space-y-8">
+                        <div class="flex items-center hover-lift">
+                            <div class="w-20 h-20 glass rounded-full flex items-center justify-center text-3xl mr-8 shadow-2xl">
+                                📧
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-2">Email</h4>
+                                <p class="opacity-90 text-lg">paramsisodiya061@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center hover-lift">
+                            <div class="w-20 h-20 glass rounded-full flex items-center justify-center text-3xl mr-8 shadow-2xl">
+                                📱
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-2">Phone</h4>
+                                <p class="opacity-90 text-lg">+91 8770404559</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center hover-lift">
+                            <div class="w-20 h-20 glass rounded-full flex items-center justify-center text-3xl mr-8 shadow-2xl">
+                                📍
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-2">Location</h4>
+                                <p class="opacity-90 text-lg">Khilchipur, Madhya Pradesh</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-16">
+                        <h4 class="font-bold text-xl mb-8">Follow My Journey</h4>
+                        <div class="flex space-x-6">
+                            <a href="#" class="w-16 h-16 glass rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 text-2xl hover-lift">
+                                📘
+                            </a>
+                            <a href="https://www.instagram.com/param_sisodiya?igsh=cnpq2kycXBsZjZw" target="_blank" class="w-16 h-16 glass rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 text-2xl hover-lift">
+                                📷
+                            </a>
+                            <a href="#" class="w-16 h-16 glass rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 text-2xl hover-lift">
+                                🐦
+                            </a>
+                            <a href="#" class="w-16 h-16 glass rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 text-2xl hover-lift">
+                                💼
+                            </a>
+                            <a href="#" class="w-16 h-16 glass rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 text-2xl hover-lift">
+                                🎨
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-right">
+                    <div class="glass p-10 rounded-3xl shadow-2xl">
+                        <h3 class="text-3xl font-bold mb-10">Start Your Project</h3>
+                        <div class="space-y-8">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block font-semibold mb-3 text-lg">First Name</label>
+                                    <input type="text" class="w-full px-6 py-4 bg-white/10 border border-white/30 rounded-xl focus:ring-2 focus:ring-white/50 focus:border-transparent text-white placeholder-white/70 text-lg" placeholder="John">
+                                </div>
+                                <div>
+                                    <label class="block font-semibold mb-3 text-lg">Last Name</label>
+                                    <input type="text" class="w-full px-6 py-4 bg-white/10 border border-white/30 rounded-xl focus:ring-2 focus:ring-white/50 focus:border-transparent text-white placeholder-white/70 text-lg" placeholder="Doe">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-3 text-lg">Email Address</label>
+                                <input type="email" class="w-full px-6 py-4 bg-white/10 border border-white/30 rounded-xl focus:ring-2 focus:ring-white/50 focus:border-transparent text-white placeholder-white/70 text-lg" placeholder="john@example.com">
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-3 text-lg">Project Type</label>
+                                <select class="w-full px-6 py-4 bg-white/10 border border-white/30 rounded-xl focus:ring-2 focus:ring-white/50 focus:border-transparent text-white text-lg">
+                                    <option value="">Select a service</option>
+                                    <option value="brand">Brand Identity</option>
+                                    <option value="logo">Logo Design</option>
+                                    <option value="social">Social Media Design</option>
+                                    <option value="print">Print Design</option>
+                                    <option value="web">Web Design</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-3 text-lg">Budget Range</label>
+                                <select class="w-full px-6 py-4 bg-white/10 border border-white/30 rounded-xl focus:ring-2 focus:ring-white/50 focus:border-transparent text-white text-lg">
+                                    <option value="">Select budget</option>
+                                    <option value="1000-2500">$1,000 - $2,500</option>
+                                    <option value="2500-5000">$2,500 - $5,000</option>
+                                    <option value="5000-10000">$5,000 - $10,000</option>
+                                    <option value="10000+">$10,000+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-semibold mb-3 text-lg">Project Details</label>
+                                <textarea rows="5" class="w-full px-6 py-4 bg-white/10 border border-white/30 rounded-xl focus:ring-2 focus:ring-white/50 focus:border-transparent text-white placeholder-white/70 text-lg" placeholder="Tell me about your vision, goals, and what you'd like to achieve..."></textarea>
+                            </div>
+                            <button class="w-full bg-white text-purple-600 py-5 rounded-xl font-bold text-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover-lift">
+                                Send Project Inquiry
+                            </button>
+                        </div>
+                        <p class="text-center mt-6 opacity-80">
+                            <span class="bg-yellow-400/30 text-yellow-200 px-4 py-2 rounded-full font-semibold">Demo Form</span> - Portfolio showcase only
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center">
+                <div class="text-4xl font-black gradient-primary bg-clip-text text-transparent mb-6 serif-font">
+                    Param Sisodiya
+                </div>
+                <p class="text-gray-300 mb-10 text-xl font-light">
+                    Creating extraordinary designs that inspire and transform
+                </p>
+                <div class="flex justify-center space-x-8 mb-10">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-lg font-medium">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-lg font-medium">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-lg font-medium">Portfolio</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-lg font-medium">Contact</a>
+                </div>
+                <div class="border-t border-gray-700 pt-10">
+                    <p class="text-gray-400 text-lg">
+                        © 2024 Param Sisodiya. All rights reserved. Crafted with ❤️ and creativity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced scroll animations with stagger effect
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.slide-up, .slide-left, .slide-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Enhanced skill bar animations
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress');
+                    skillBars.forEach((bar, index) => {
+                        setTimeout(() => {
+                            bar.classList.add('animate');
+                        }, index * 300);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const skillsSection = document.querySelector('#skills');
+        if (skillsSection) {
+            skillObserver.observe(skillsSection);
+        }
+
+        // Smooth scrolling with easing
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Enhanced navbar with blur effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.backdropFilter = 'blur(30px)';
+                navbar.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.15)';
+                navbar.style.backdropFilter = 'blur(20px)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Magnetic effect for buttons
+        document.querySelectorAll('.magnetic').forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                el.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'translate(0px, 0px)';
+            });
+        });
+
+        // Contact form demo with enhanced feedback
+        document.querySelector('button[type="button"]')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.innerHTML = '<span class="loading-dots">Sending</span>';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                alert('🎉 Thank you for your interest! This is a demo portfolio. In a real scenario, your message would be sent to Param directly.');
+                this.innerHTML = 'Send Project Inquiry';
+                this.disabled = false;
+            }, 2000);
+        });
+
+        // Portfolio project buttons with enhanced interaction
+        document.querySelectorAll('.portfolio-overlay button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.innerHTML = 'Opening...';
+                setTimeout(() => {
+                    alert('🚀 This would open the full project case study in a real portfolio!');
+                    this.innerHTML = 'View Project';
+                }, 1000);
+            });
+        });
+
+        // Add parallax effect to floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.float, .float-delayed, .float-slow');
+            
+            parallax.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974a13ede0998ad9',t:'MTc1NjExNDMwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
