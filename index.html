@@ -636,163 +636,182 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-32 bg-gradient-to-br from-white via-blue-50 to-purple-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="slide-up text-center mb-24">
-                <h2 class="text-6xl font-black serif-font text-gray-800 mb-8">Portfolio Showcase</h2>
-                <div class="w-32 h-2 gradient-primary mx-auto rounded-full mb-8"></div>
-                <p class="text-2xl text-gray-600 max-w-3xl mx-auto font-light">
-                    A curated collection of my finest creative masterpieces
-                </p>
+<section id="portfolio" class="py-32 bg-gradient-to-br from-white via-slate-50 to-purple-50" style="scroll-margin-top: 96px;">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Heading -->
+    <div class="slide-up text-center mb-20">
+      <h2 class="text-6xl font-black serif-font text-gray-900 mb-5">Portfolio Showcase</h2>
+      <div class="w-28 h-1.5 gradient-primary mx-auto rounded-full mb-6"></div>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Selected work — sleek visuals, real links, and clean overlays
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Feature Card -->
+      <article class="lg:col-span-2 group relative overflow-hidden rounded-3xl ring-1 ring-black/5 bg-white shadow-2xl hover:shadow-[0_24px_80px_rgba(0,0,0,0.15)] transition-all duration-500 scale-in">
+        <div class="relative h-[26rem]">
+          <img
+            src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=2400&q=80"
+            alt="Minimal corporate branding set with stationery and cards"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.05]"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none"></div>
+
+          <!-- Text overlay (z-10 so it's always visible) -->
+          <div class="absolute inset-x-0 bottom-0 p-8 md:p-10 z-10">
+            <h3 class="text-2xl md:text-3xl font-bold text-white drop-shadow">Corporate Branding System</h3>
+            <p class="mt-2 text-white/90 max-w-3xl">
+              Logo, color system, typography and brand guidelines for a SaaS startup.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs">Branding</span>
+              <span class="px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs">Guidelines</span>
+              <span class="px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs">Identity</span>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Portfolio Item 1 -->
-                <div class="scale-in">
-                    <div class="portfolio-card hover-glow">
-                        <div class="h-80 gradient-primary flex items-center justify-center text-white text-8xl relative overflow-hidden">
-                            🏢
-                            <div class="portfolio-overlay">
-                                <h3 class="text-white text-3xl font-bold mb-4">Corporate Branding</h3>
-                                <p class="text-white/95 text-center px-8 mb-6 text-lg">Complete brand identity system for tech startup including logo, colors, and comprehensive guidelines</p>
-                                <button class="px-8 py-3 bg-white text-purple-600 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">
-                                    View Project
-                                </button>
-                            </div>
-                        </div>
-                        <div class="p-8">
-                            <h3 class="font-bold text-2xl text-gray-800 mb-3">TechFlow Brand Identity</h3>
-                            <p class="text-gray-600 mb-4 text-lg">Complete branding solution for innovative tech company</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Branding</span>
-                                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Logo Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 2 -->
-                <div class="scale-in">
-                    <div class="portfolio-card hover-glow">
-                        <div class="h-80 gradient-secondary flex items-center justify-center text-white text-8xl relative overflow-hidden">
-                            📱
-                            <div class="portfolio-overlay">
-                                <h3 class="text-white text-3xl font-bold mb-4">Social Campaign</h3>
-                                <p class="text-white/95 text-center px-8 mb-6 text-lg">Engaging social media designs that increased engagement by 300% and drove massive growth</p>
-                                <button class="px-8 py-3 bg-white text-blue-600 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">
-                                    View Project
-                                </button>
-                            </div>
-                        </div>
-                        <div class="p-8">
-                            <h3 class="font-bold text-2xl text-gray-800 mb-3">Social Media Revolution</h3>
-                            <p class="text-gray-600 mb-4 text-lg">Dynamic social media campaign for lifestyle brand</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Social Media</span>
-                                <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">Digital Marketing</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 3 -->
-                <div class="scale-in">
-                    <div class="portfolio-card hover-glow">
-                        <div class="h-80 gradient-accent flex items-center justify-center text-white text-8xl relative overflow-hidden">
-                            🎯
-                            <div class="portfolio-overlay">
-                                <h3 class="text-white text-3xl font-bold mb-4">Restaurant Rebrand</h3>
-                                <p class="text-white/95 text-center px-8 mb-6 text-lg">Fresh visual identity that increased customer visits by 40% and transformed brand perception</p>
-                                <button class="px-8 py-3 bg-white text-pink-600 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">
-                                    View Project
-                                </button>
-                            </div>
-                        </div>
-                        <div class="p-8">
-                            <h3 class="font-bold text-2xl text-gray-800 mb-3">Bistro Moderne Rebrand</h3>
-                            <p class="text-gray-600 mb-4 text-lg">Complete visual transformation for upscale restaurant</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold">Rebranding</span>
-                                <span class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold">Hospitality</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 4 -->
-                <div class="scale-in">
-                    <div class="portfolio-card hover-glow">
-                        <div class="h-80 gradient-fire flex items-center justify-center text-white text-8xl relative overflow-hidden">
-                            🎪
-                            <div class="portfolio-overlay">
-                                <h3 class="text-white text-3xl font-bold mb-4">Festival Poster</h3>
-                                <p class="text-white/95 text-center px-8 mb-6 text-lg">Eye-catching poster design that sold out the event and created massive buzz</p>
-                                <button class="px-8 py-3 bg-white text-red-600 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">
-                                    View Project
-                                </button>
-                            </div>
-                        </div>
-                        <div class="p-8">
-                            <h3 class="font-bold text-2xl text-gray-800 mb-3">Summer Music Festival</h3>
-                            <p class="text-gray-600 mb-4 text-lg">Vibrant poster design for major music event</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full text-sm font-semibold">Print Design</span>
-                                <span class="px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-semibold">Event Marketing</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 5 -->
-                <div class="scale-in">
-                    <div class="portfolio-card hover-glow">
-                        <div class="h-80 gradient-ocean flex items-center justify-center text-white text-8xl relative overflow-hidden">
-                            💻
-                            <div class="portfolio-overlay">
-                                <h3 class="text-white text-3xl font-bold mb-4">E-commerce Design</h3>
-                                <p class="text-white/95 text-center px-8 mb-6 text-lg">Modern website design that increased conversions by 60% and boosted sales</p>
-                                <button class="px-8 py-3 bg-white text-indigo-600 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">
-                                    View Project
-                                </button>
-                            </div>
-                        </div>
-                        <div class="p-8">
-                            <h3 class="font-bold text-2xl text-gray-800 mb-3">Fashion E-commerce</h3>
-                            <p class="text-gray-600 mb-4 text-lg">Sleek online store design for fashion retailer</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold">Web Design</span>
-                                <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">UI/UX</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 6 -->
-                <div class="scale-in">
-                    <div class="portfolio-card hover-glow">
-                        <div class="h-80 gradient-sunset flex items-center justify-center text-white text-8xl relative overflow-hidden">
-                            📦
-                            <div class="portfolio-overlay">
-                                <h3 class="text-white text-3xl font-bold mb-4">Package Design</h3>
-                                <p class="text-white/95 text-center px-8 mb-6 text-lg">Premium packaging that enhanced brand perception and increased shelf appeal</p>
-                                <button class="px-8 py-3 bg-white text-emerald-600 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg">
-                                    View Project
-                                </button>
-                            </div>
-                        </div>
-                        <div class="p-8">
-                            <h3 class="font-bold text-2xl text-gray-800 mb-3">Organic Skincare Line</h3>
-                            <p class="text-gray-600 mb-4 text-lg">Eco-friendly packaging design for beauty products</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">Package Design</span>
-                                <span class="px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-semibold">Sustainability</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-purple-700 font-semibold hover:bg-gray-100 transition">
+                Case Study
+              </a>
+              <a href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/30 bg-white/10 text-white hover:bg-white/20 transition">
+                Assets
+              </a>
             </div>
+          </div>
         </div>
-    </section>
+      </article>
 
+      <!-- Card 2 -->
+      <article class="group relative overflow-hidden rounded-3xl ring-1 ring-black/5 bg-white shadow-xl hover:shadow-2xl transition-all duration-500 scale-in">
+        <div class="relative h-80">
+          <img
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80"
+            alt="UI design screens and team collaboration"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent pointer-events-none"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 z-10">
+            <h3 class="text-xl font-bold text-white">E‑commerce UI Revamp</h3>
+            <p class="mt-1 text-white/90">New product cards, filters and checkout flow.</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs">UI/UX</span>
+              <span class="px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs">Prototype</span>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <a href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-white text-purple-700 font-semibold hover:bg-gray-100 transition">Live</a>
+              <a href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg border border-white/30 bg-white/10 text-white hover:bg-white/20 transition">Code</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="group relative overflow-hidden rounded-3xl ring-1 ring-black/5 bg-white shadow-xl hover:shadow-2xl transition-all duration-500 scale-in">
+        <div class="relative h-80">
+          <img
+            src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=2000&q=80"
+            alt="Finance mobile app dashboard with charts"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent pointer-events-none"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 z-10">
+            <h3 class="text-xl font-bold text-white">Finance Mobile App</h3>
+            <p class="mt-1 text-white/90">Clean charts, quick actions, accessible color system.</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs">UI Kit</span>
+              <span class="px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs">Design Tokens</span>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <a href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-white text-purple-700 font-semibold hover:bg-gray-100 transition">Case Study</a>
+              <a href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg border border-white/30 bg-white/10 text-white hover:bg-white/20 transition">Prototype</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="group relative overflow-hidden rounded-3xl ring-1 ring-black/5 bg-white shadow-xl hover:shadow-2xl transition-all duration-500 scale-in">
+        <div class="relative h-80">
+          <img
+            src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2000&q=80"
+            alt="Vibrant festival poster displayed on wall"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent pointer-events-none"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 z-10">
+            <h3 class="text-xl font-bold text-white">Festival Poster Series</h3>
+            <p class="mt-1 text-white/90">Bold palette and expressive type for a summer fest.</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs">Print</span>
+              <span class="px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs">Event</span>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <a href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-white text-purple-700 font-semibold hover:bg-gray-100 transition">Case Study</a>
+              <a href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg border border-white/30 bg-white/10 text-white hover:bg-white/20 transition">Poster</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="group relative overflow-hidden rounded-3xl ring-1 ring-black/5 bg-white shadow-xl hover:shadow-2xl transition-all duration-500 scale-in">
+        <div class="relative h-80">
+          <img
+            src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=2000&q=80"
+            alt="Landing page design on laptop"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent pointer-events-none"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 z-10">
+            <h3 class="text-xl font-bold text-white">Landing Page Redesign</h3>
+            <p class="mt-1 text-white/90">Hero, social proof and pricing optimized for conversion.</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs">Web</span>
+              <span class="px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs">UI/UX</span>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <a href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-white text-purple-700 font-semibold hover:bg-gray-100 transition">Live</a>
+              <a href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg border border-white/30 bg-white/10 text-white hover:bg-white/20 transition">Code</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="group relative overflow-hidden rounded-3xl ring-1 ring-black/5 bg-white shadow-xl hover:shadow-2xl transition-all duration-500 scale-in">
+        <div class="relative h-80">
+          <img
+            src="https://images.unsplash.com/photo-1551292831-023188e78222?auto=format&fit=crop&w=2000&q=80"
+            alt="Premium cosmetic packaging set"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent pointer-events-none"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 z-10">
+            <h3 class="text-xl font-bold text-white">Organic Skincare Packaging</h3>
+            <p class="mt-1 text-white/90">Sustainable materials with premium finish system.</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs">Packaging</span>
+              <span class="px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs">Sustainability</span>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <a href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-white text-purple-700 font-semibold hover:bg-gray-100 transition">Case Study</a>
+              <a href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg border border-white/30 bg-white/10 text-white hover:bg-white/20 transition">Assets</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
     <!-- Tools Section -->
     <section id="tools" class="py-32 bg-gradient-to-br from-gray-100 via-purple-50 to-pink-50">
         <div class="max-w-7xl mx-auto px-6">
@@ -1302,6 +1321,7 @@
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974a13ede0998ad9',t:'MTc1NjExNDMwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
 
 
